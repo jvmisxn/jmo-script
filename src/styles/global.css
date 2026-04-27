@@ -1,0 +1,645 @@
+/* ============================================================================
+   JMO Script — App-Specific Styles
+   Base tokens, scrollbars, toolbar, panel, status bar all from @jmo/core/theme.
+   ========================================================================= */
+
+/* ─── Layout ──────────────────────────────────────────────────────────── */
+
+.panels-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ─── Toolbar Extras ──────────────────────────────────────────────────── */
+
+.toolbar-project-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--jmo-text-primary);
+}
+
+.dirty-indicator {
+  color: var(--jmo-accent);
+  font-weight: bold;
+}
+
+/* ─── Status Bar Extras ───────────────────────────────────────────────── */
+
+.status-separator {
+  color: var(--jmo-border-light);
+  margin: 0 6px;
+}
+
+.status-element-type {
+  color: var(--jmo-accent);
+  font-weight: 600;
+}
+
+.status-doctype {
+  text-transform: capitalize;
+  color: var(--jmo-text-secondary);
+}
+
+/* ─── Project List ────────────────────────────────────────────────────── */
+
+.project-list {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.project-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.project-list-header h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--jmo-text-primary);
+  margin: 0;
+}
+
+.project-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 60px 20px;
+  color: var(--jmo-text-secondary);
+  text-align: center;
+}
+
+.project-empty p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.project-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.project-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--jmo-bg-secondary);
+  border: 1px solid var(--jmo-border);
+  border-radius: var(--jmo-radius, 4px);
+  cursor: pointer;
+  transition: border-color 0.12s, background 0.12s;
+}
+
+.project-card:hover {
+  border-color: var(--jmo-border-light);
+  background: var(--jmo-bg-active);
+}
+
+.project-card-icon {
+  color: var(--jmo-accent);
+  flex-shrink: 0;
+}
+
+.project-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.project-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--jmo-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-card-meta {
+  font-size: 11px;
+  color: var(--jmo-text-secondary);
+  text-transform: capitalize;
+}
+
+.project-card-date {
+  font-size: 10px;
+  color: var(--jmo-text-muted);
+}
+
+/* ─── Create Project Form ─────────────────────────────────────��───────── */
+
+.create-project-form {
+  background: var(--jmo-bg-surface, var(--jmo-bg-secondary));
+  border: 1px solid var(--jmo-border);
+  border-radius: var(--jmo-radius, 4px);
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.create-project-types {
+  display: flex;
+  gap: 6px;
+}
+
+.type-chip {
+  padding: 4px 10px;
+  font-size: 11px;
+  border: 1px solid var(--jmo-border);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--jmo-text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.type-chip:hover {
+  border-color: var(--jmo-border-light);
+  color: var(--jmo-text-primary);
+}
+
+.type-chip.active {
+  border-color: var(--jmo-accent);
+  color: var(--jmo-accent);
+  background: rgba(200, 168, 122, 0.1);
+}
+
+.create-project-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* ─── Buttons & Inputs ────────────────────────────────────────────────── */
+
+.jmo-input {
+  background: var(--jmo-bg-input, var(--jmo-bg-primary));
+  border: 1px solid var(--jmo-border);
+  border-radius: var(--jmo-radius, 4px);
+  color: var(--jmo-text-primary);
+  font-size: 12px;
+  padding: 6px 8px;
+  outline: none;
+  transition: border-color 0.12s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.jmo-input:focus {
+  border-color: var(--jmo-accent);
+}
+
+.jmo-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.jmo-btn {
+  padding: 5px 12px;
+  font-size: 11px;
+  border: 1px solid var(--jmo-border);
+  border-radius: var(--jmo-radius, 4px);
+  background: var(--jmo-bg-secondary);
+  color: var(--jmo-text-primary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.jmo-btn:hover {
+  border-color: var(--jmo-border-light);
+  background: var(--jmo-bg-active);
+}
+
+.jmo-btn-accent {
+  border-color: var(--jmo-accent);
+  color: var(--jmo-accent);
+}
+
+.jmo-btn-accent:hover {
+  background: rgba(200, 168, 122, 0.15);
+}
+
+/* ─── Editor View ─────────────────────────────────────────────────────── */
+
+.editor-view {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.editor-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--jmo-text-secondary);
+}
+
+/* ─── Element Type Bar ────────────────────────────────────────────────── */
+
+.element-type-bar {
+  display: flex;
+  gap: 2px;
+  padding: 4px 8px;
+  background: var(--jmo-bg-primary);
+  border-bottom: 1px solid var(--jmo-border);
+  flex-shrink: 0;
+}
+
+.element-type-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  border: 1px solid transparent;
+  border-radius: var(--jmo-radius, 4px);
+  background: transparent;
+  color: var(--jmo-text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.element-type-btn:hover {
+  color: var(--jmo-text-primary);
+  background: var(--jmo-bg-active);
+}
+
+.element-type-btn.active {
+  color: var(--jmo-accent);
+  border-color: var(--jmo-accent);
+  background: rgba(200, 168, 122, 0.08);
+}
+
+.element-type-shortcut {
+  font-size: 9px;
+  opacity: 0.5;
+  font-weight: 600;
+}
+
+.element-type-label {
+  font-weight: 500;
+}
+
+/* ─── Editor Page (Paper) ─────────────────────────────────────────────── */
+
+.editor-page {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--jmo-bg-canvas, #111);
+  display: flex;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.editor-page-inner {
+  width: 100%;
+  max-width: 680px;
+  min-height: 100%;
+  background: var(--jmo-bg-secondary);
+  border: 1px solid var(--jmo-border);
+  border-radius: var(--jmo-radius, 4px);
+  padding: 40px 48px;
+}
+
+/* ─── Tiptap Editor ───────────────────────────────────────────────────── */
+
+.tiptap-editor {
+  outline: none;
+  min-height: 400px;
+  font-family: 'Courier Prime', 'Courier New', Courier, monospace;
+  font-size: 12pt;
+  line-height: 1;
+  color: var(--jmo-text-primary);
+}
+
+.tiptap-editor .ProseMirror {
+  outline: none;
+}
+
+.tiptap-editor .ProseMirror > * + * {
+  margin-top: 0;
+}
+
+/* Placeholder styling */
+.tiptap-editor .ProseMirror p.is-editor-empty:first-child::before,
+.tiptap-editor .ProseMirror div.is-editor-empty:first-child::before,
+.tiptap-editor .ProseMirror [data-type].is-node-empty::before {
+  content: attr(data-placeholder);
+  color: var(--jmo-text-muted);
+  pointer-events: none;
+  float: left;
+  height: 0;
+}
+
+/* ─── Screenplay Element Styles ───────────────────────────────────────── */
+
+.screenplay-element {
+  padding: 1px 0;
+  line-height: 1;
+}
+
+.screenplay-scene-heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.screenplay-action {
+  margin-top: 12px;
+}
+
+.screenplay-character {
+  text-transform: uppercase;
+  margin-left: 2.2in;
+  margin-top: 12px;
+}
+
+.screenplay-dialogue {
+  margin-left: 1in;
+  max-width: 3.5in;
+}
+
+.screenplay-parenthetical {
+  margin-left: 1.6in;
+  max-width: 2.5in;
+}
+
+.screenplay-transition {
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.screenplay-centered {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/* ─── Book Element Styles ─────────────────────────────────────────────── */
+
+.book-element {
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.book-chapter {
+  font-size: 18pt;
+  font-weight: 600;
+  margin-top: 36px;
+  margin-bottom: 18px;
+  color: var(--jmo-text-primary);
+  border-bottom: 1px solid var(--jmo-border);
+  padding-bottom: 8px;
+}
+
+.book-paragraph {
+  text-indent: 2em;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.book-quote {
+  margin: 16px 24px;
+  padding-left: 16px;
+  border-left: 3px solid var(--jmo-accent);
+  font-style: italic;
+  color: var(--jmo-text-secondary);
+  line-height: 1.6;
+}
+
+.book-break {
+  border: none;
+  border-top: 1px solid var(--jmo-border);
+  margin: 24px auto;
+  width: 40%;
+}
+
+/* ─── Plain Element Styles ────────────────────────────────────────────── */
+
+.plain-element {
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.plain-paragraph {
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+/* ─── Editor Sidebar ──────────────────────────────────────────────────── */
+
+.editor-sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--jmo-border);
+  display: flex;
+  flex-direction: column;
+  background: var(--jmo-bg-secondary);
+  overflow: hidden;
+}
+
+.sidebar-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--jmo-border);
+  flex-shrink: 0;
+}
+
+.sidebar-tab {
+  flex: 1;
+  padding: 8px 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: var(--jmo-text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+}
+
+.sidebar-tab:hover {
+  color: var(--jmo-text-primary);
+  background: var(--jmo-bg-active);
+}
+
+.sidebar-tab.active {
+  color: var(--jmo-accent);
+  box-shadow: inset 0 -2px 0 var(--jmo-accent);
+}
+
+.sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.sidebar-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 12px;
+  text-align: center;
+  color: var(--jmo-text-secondary);
+  font-size: 12px;
+  gap: 4px;
+}
+
+.sidebar-hint {
+  font-size: 10px;
+  color: var(--jmo-text-muted);
+}
+
+/* ─── Scene Navigator ─────────────────────────────────────────────────── */
+
+.scene-navigator {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scene-item {
+  padding: 6px 8px;
+  border-radius: var(--jmo-radius, 4px);
+  cursor: pointer;
+  transition: background 0.12s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.scene-item:hover {
+  background: var(--jmo-bg-active);
+}
+
+.scene-item.active {
+  background: var(--jmo-bg-active);
+  border-left: 2px solid var(--jmo-accent);
+}
+
+.scene-label {
+  font-size: 11px;
+  color: var(--jmo-text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scene-meta {
+  font-size: 10px;
+  color: var(--jmo-text-muted);
+}
+
+/* ─── Character List ──────────────────────────────────────────────────── */
+
+.character-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.character-item {
+  padding: 6px 8px;
+  border-radius: var(--jmo-radius, 4px);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.character-item:hover {
+  background: var(--jmo-bg-active);
+}
+
+.character-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--jmo-text-primary);
+  font-family: 'Courier Prime', 'Courier New', monospace;
+}
+
+.character-stats {
+  font-size: 10px;
+  color: var(--jmo-text-muted);
+}
+
+/* ─── Stats Panel ─────────────────────────────────────────────────────── */
+
+.stats-panel {
+  padding: 4px 0;
+}
+
+.info-table {
+  width: 100%;
+  font-size: 11px;
+}
+
+.info-table tr {
+  border-bottom: 1px solid var(--jmo-border);
+}
+
+.info-table td {
+  padding: 6px 8px;
+}
+
+.info-table td:first-child {
+  color: var(--jmo-text-secondary);
+  width: 45%;
+}
+
+.info-table td:last-child {
+  color: var(--jmo-text-primary);
+  font-weight: 500;
+}
+
+/* ─── Metadata Editor ─────────────────────────────────────────────────── */
+
+.metadata-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.metadata-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.metadata-field label {
+  font-size: 10px;
+  color: var(--jmo-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Utility ─────────────────────────────────────────────────────────── */
+
+.flex-1 {
+  flex: 1;
+}

@@ -1,0 +1,23 @@
+[package]
+name = "jmo-script"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+description = "JMO Script — Screenplay, Book & Plain Text Editor"
+
+[lib]
+name = "jmo_script_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { workspace = true }
+
+[dependencies]
+tauri = { workspace = true }
+tauri-plugin-dialog = { workspace = true }
+tauri-plugin-fs = { workspace = true }
+tauri-plugin-shell = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+chrono = { workspace = true }
+uuid = { version = "1", features = ["v4"] }
