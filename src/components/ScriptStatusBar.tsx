@@ -1,4 +1,4 @@
-import { StatusBar } from "@jmo/core/components";
+import { StatusBar, PerfMonitor } from "@jmo/core/components";
 import type { AppMode } from "@/types";
 import { useEditorStore } from "@/stores/editorStore";
 import { useProjectStore } from "@/stores/projectStore";
@@ -23,6 +23,7 @@ export function ScriptStatusBar({ mode }: ScriptStatusBarProps) {
             {projects.length} project{projects.length !== 1 ? "s" : ""}
           </span>
         }
+        right={<PerfMonitor />}
       />
     );
   }
@@ -46,9 +47,12 @@ export function ScriptStatusBar({ mode }: ScriptStatusBarProps) {
         </>
       }
       right={
-        activeProject ? (
-          <span className="status-doctype">{activeProject.documentType}</span>
-        ) : undefined
+        <>
+          {activeProject && (
+            <span className="status-doctype">{activeProject.documentType}</span>
+          )}
+          <PerfMonitor />
+        </>
       }
     />
   );
