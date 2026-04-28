@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { uid } from "@jmo/core/utils";
 import type { ElementType, CursorPosition, ScriptElement } from "@/types";
 
 interface EditorStoreState {
@@ -91,7 +92,7 @@ export function tiptapToElements(
       node.content?.map((c) => c.text || "").join("") || "";
 
     elements.push({
-      id: crypto.randomUUID(),
+      id: uid(),
       type: elementType,
       text,
       sceneNumber: (node.attrs?.sceneNumber as string) || undefined,

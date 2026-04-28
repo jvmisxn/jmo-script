@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { uid } from "@jmo/core/utils";
 import type { ScriptProject, DocumentType } from "@/types";
 
 interface ProjectStoreState {
@@ -53,7 +54,7 @@ export function createBlankProject(
 ): ScriptProject {
   const now = new Date().toISOString();
   return {
-    id: crypto.randomUUID(),
+    id: uid(),
     title,
     documentType,
     createdAt: now,
